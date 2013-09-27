@@ -421,7 +421,7 @@ NSDictionary *_classesForNames = nil;
 				
 				if (nodeString)
 				{
-					if (!oneChild.containsAppleConvertedSpace)
+					if (!oneChild.containsAppleConvertedSpace && !_preserveAllWhitespace)
 					{
 						// we already have a white space in the string so far
 						if ([[tmpString string] hasSuffixCharacterFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]])
@@ -1307,6 +1307,7 @@ NSDictionary *_classesForNames = nil;
 	_isColorInherited = YES;
 	
 	_preserveNewlines = element.preserveNewlines;
+	_preserveAllWhitespace = element.preserveNewlines;
 
 	_currentTextSize = element.currentTextSize;
 	_textScale = element.textScale;
@@ -1495,6 +1496,7 @@ NSDictionary *_classesForNames = nil;
 @synthesize floatStyle = _floatStyle;
 @synthesize isColorInherited = _isColorInherited;
 @synthesize preserveNewlines = _preserveNewlines;
+@synthesize preserveAllWhitespace = _preserveAllWhitespace;
 @synthesize displayStyle = _displayStyle;
 @synthesize fontVariant = _fontVariant;
 @synthesize currentTextSize = _currentTextSize;
