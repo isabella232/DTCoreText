@@ -40,17 +40,18 @@
 		if (_preserveNewlines)
 		{
 			text = _text;
-			
-			// PRE ignores the first \n
-			if ([text hasPrefix:@"\n"])
-			{
-				text = [text substringFromIndex:1];
-			}
-			
-			// PRE ignores the last \n
-			if ([text hasSuffix:@"\n"])
-			{
-				text = [text substringWithRange:NSMakeRange(0, [text length]-1)];
+			if (!_preserveAllWhitespace) {
+				// PRE ignores the first \n
+				if ([text hasPrefix:@"\n"])
+				{
+					text = [text substringFromIndex:1];
+				}
+
+				// PRE ignores the last \n
+				if ([text hasSuffix:@"\n"])
+				{
+					text = [text substringWithRange:NSMakeRange(0, [text length]-1)];
+				}
 			}
 			
 			// replace paragraph breaks with line breaks

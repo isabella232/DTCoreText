@@ -56,6 +56,7 @@
 	BOOL _isColorInherited;
 	
 	BOOL _preserveNewlines;
+	BOOL _preserveAllWhitespace;
 	BOOL _containsAppleConvertedSpace;
 	
 	DTHTMLElementFontVariant _fontVariant;
@@ -223,6 +224,11 @@
  Specifies that whitespace and new lines should be preserved. Default is to compress white space.
  */
 @property (nonatomic, assign) BOOL preserveNewlines;
+
+/**
+ Specifies that all whitespace and new lines should be preserved. Set from preserveNewlines for nested tags
+ */
+@property (nonatomic, assign) BOOL preserveAllWhitespace;
 
 /**
  The current font variant of the receiver, normal or small caps.
